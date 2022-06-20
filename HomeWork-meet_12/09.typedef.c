@@ -85,6 +85,7 @@ int main()
     return (0);
 }
 
+//void function to free allocated memory from employees
 void freeEmployees(struct employee *employees)
 {
     for (int i = 0; i < EMPLOYEES; i++)
