@@ -1,0 +1,100 @@
+Задача 1. Реализация на списък. Напишете програма, 
+която добавя и изтрива елемент от списък по позиция в списъка. 
+Използвайте следния елемент на динамичния списък:
+
+typedef struct t_node { 
+  int m_nValue; 
+  t_node* m_pNext; 
+} t_node;
+
+
+==============================================================
+
+Задача 2. Направете едносвързан списък, съдържащ числата 1-14 и принтирайте петия елемент от края му.
+
+===============================================================
+
+Задача 3. Моделиране на играта “Броеница”: N деца застават в кръг и получават номера от 1 до N.
+ Като се започне от дете 1, по часовниковата стрелка се отброяват М деца. 
+ Дете с номер М излиза от кръга, след което започва ново броене от следващото дете. 
+ Продължава, докато остане само едно дете, чийто номер трябва да се определи.
+
+================================================================
+
+Задача 4. Двойно-свързан списък. Напишете програма, която добавя и изтрива елемент от списъка по зададена стойност, която се пази в него.
+Използвайте следния елемент на двойно-свързания списък:
+
+/* doubly linked list */
+typedef struct TDListNode {
+ int m_nValue;
+ struct TDListNode* m_pNextNode;
+ struct TDListNode* m_pPrevNode;
+} TDListNode;
+
+==============================================================
+
+Задача 5. Напишете програма за въвеждане на елемент по средата на двойно свързан списък.
+Задача 6. Напишете програма за триене на N-тия елемент от края на двойно свързан списък.
+Задача 7. Напишете програма за триене на елемент от двойно свързан списък по зададена позиция в него.
+
+===============================================================
+
+Зяд 6
+current=start;
+while(current->next!=NULL)
+{
+    current=current->next;
+}
+int i;
+for(i=0,)
+псевдо код
+
+====================================================================
+
+Двойно свързан списък:
+#include <stdio.h>
+#include <stdlib.h>
+/* doubly linked list */
+typedef struct TDListNode {
+  int m_nValue;
+  struct TDListNode* m_pNextNode;
+  struct TDListNode* m_pPrevNode;
+} TDListNode;
+void print(TDListNode * s);
+int main()
+{
+ TDListNode *start;
+ TDListNode *current;
+for(int i=0;i<3;i++){
+ current=(TDListNode *)malloc(sizeof(TDListNode));
+ if(current==NULL)
+ {
+  printf("No memmory");
+  return  1;
+ }
+    if(start==NULL) // empty list
+    {
+      current->m_nValue=i+5;
+      current->m_pNextNode=NULL;
+      current->m_pPrevNode=NULL;
+      start=current;
+    }
+    else{
+        TDListNode * tmp=start;
+        while(tmp->m_pNextNode!=NULL){
+            tmp=tmp->m_pNextNode;
+        }
+       current->m_nValue=i+5;
+       current->m_pNextNode=NULL;
+       current->m_pPrevNode=tmp;
+       tmp->m_pNextNode=current;
+    }
+    }
+     print(start);
+   }
+   print(TDListNode * s){
+     for(TDListNode * tmp =s; tmp!=NULL; tmp=tmp->m_pNextNode)
+     {
+         printf("%d\n", tmp->m_nValue);
+     }
+    }
