@@ -23,3 +23,15 @@ int main()
 
     return 0;
 }
+
+//second way with function
+int gcd(int firstNum, int secondNum)
+{
+    {
+        if (firstNum == 0)
+        {
+            return secondNum;
+        }
+        return gcd(secondNum % firstNum, firstNum);
+    }
+}
