@@ -24,7 +24,7 @@ int main()
     return 0;
 }
 
-//second way with function
+//second way with recursion
 int gcd(int firstNum, int secondNum)
 {
     {
